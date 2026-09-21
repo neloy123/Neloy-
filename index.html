@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neloy Enterprise — Glass, Aluminium Doors &amp; Windows, Home Decor Boards</title>
+<meta name="description" content="Neloy Enterprise, Netrakona — Aluminium &amp; Glass Doors, Windows and Home Decoration Boards. Custom sizes, live pricing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14171C;
+  --ink-soft:#2A2E36;
+  --paper:#F2EFE9;
+  --paper-dim:#E7E2D8;
+  --glass:#5D8FB0;
+  --glass-dim:#DCE7ED;
+  --brass:#B08654;
+  --silver:#9AA1AA;
+  --line:#C9C2B4;
+  --ok:#3E7A4F;
+  --radius:2px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+html[data-lang="bn"] body{font-family:'Noto Sans Bengali','Inter',sans-serif;}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.01em;}
+html[data-lang="bn"] h1,html[data-lang="bn"] h2,html[data-lang="bn"] h3,html[data-lang="bn"] .disp{font-family:'Noto Sans Bengali',sans-serif;font-weight:700;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+[data-bn]{display:none;}
+html[data-lang="bn"] [data-en]{display:none;}
+html[data-lang="bn"] [data-bn]{display:inline;}
+html[data-lang="bn"] [data-bn].block{display:block;}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(242,239,233,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand svg{width:38px;height:38px;flex-shrink:0;}
+.brand-text{line-height:1.1;}
+.brand-text .name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:0.01em;}
+html[data-lang="bn"] .brand-text .name{font-family:'Noto Sans Bengali',sans-serif;}
+.brand-text .sub{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);}
+nav ul{display:flex;gap:32px;list-style:none;}
+nav ul li a{font-size:0.88rem;font-weight:500;position:relative;padding-bottom:4px;}
+nav ul li a:hover{color:var(--brass);}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.lang-toggle{
+  display:flex;border:1px solid var(--ink);border-radius:20px;overflow:hidden;font-size:0.72rem;font-weight:600;cursor:pointer;
+}
+.lang-toggle span{padding:6px 12px;transition:.2s;}
+.lang-toggle span.active{background:var(--ink);color:var(--paper);}
+.cart-btn{position:relative;display:flex;align-items:center;gap:6px;cursor:pointer;font-size:0.85rem;font-weight:600;}
+.cart-count{
+  position:absolute;top:-8px;right:-10px;background:var(--brass);color:#fff;
+  font-size:0.62rem;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;
+}
+.burger{display:none;}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:90px 0 70px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;}
+.eyebrow{
+  font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:18px;display:block;
+}
+.hero h1{font-size:3.1rem;line-height:1.08;margin-bottom:22px;}
+.hero h1 em{font-style:normal;color:var(--glass);}
+.hero p.lead{font-size:1.05rem;color:var(--ink-soft);max-width:480px;margin-bottom:32px;}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:2px;font-weight:600;font-size:0.9rem;cursor:pointer;border:1px solid var(--ink);transition:.2s;
+}
+.btn-primary{background:var(--ink);color:var(--paper);}
+.btn-primary:hover{background:var(--glass);border-color:var(--glass);}
+.btn-outline{background:transparent;color:var(--ink);}
+.btn-outline:hover{background:var(--ink);color:var(--paper);}
+.hero-art{position:relative;}
+.dim-label{font-family:'Space Grotesk',monospace;font-size:0.68rem;fill:var(--ink-soft);}
+
+/* ---------- Sections general ---------- */
+section{padding:80px 0;}
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head .eyebrow{margin-bottom:12px;}
+.section-head h2{font-size:2.1rem;margin-bottom:14px;}
+.section-head p{color:var(--ink-soft);font-size:1rem;}
+
+/* ---------- Category cards ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.cat-card{
+  border:1px solid var(--line);padding:30px 26px;background:#fff;position:relative;transition:.25s;
+}
+.cat-card:hover{border-color:var(--ink);transform:translateY(-3px);}
+.cat-card svg{width:44px;height:44px;margin-bottom:20px;color:var(--glass);}
+.cat-card h3{font-size:1.15rem;margin-bottom:10px;}
+.cat-card p{font-size:0.88rem;color:var(--ink-soft);margin-bottom:16px;}
+.cat-card .go{font-size:0.8rem;font-weight:700;color:var(--brass);}
+
+/* ---------- Configurator ---------- */
+.configurator{background:var(--ink);color:var(--paper);}
+.configurator .section-head p{color:#B9BDC4;}
+.configurator .section-head .eyebrow{color:var(--brass);}
+.config-panel{
+  display:grid;grid-template-columns:1fr 380px;gap:0;border:1px solid #383D46;background:#1B1F26;
+}
+.config-steps{padding:36px;border-right:1px solid #383D46;}
+.step{margin-bottom:30px;}
+.step-num{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.step-num span.n{
+  width:22px;height:22px;border:1px solid var(--brass);color:var(--brass);border-radius:50%;font-size:0.72rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;
+}
+.step-num label{font-size:0.85rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;color:#D8DADD;}
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.opt{
+  border:1px solid #40454F;padding:12px 14px;font-size:0.82rem;cursor:pointer;transition:.15s;background:#20242C;
+}
+.opt:hover{border-color:var(--glass);}
+.opt.selected{border-color:var(--brass);background:#2A2416;color:var(--brass);}
+.opt small{display:block;color:#8A8F97;font-size:0.72rem;margin-top:3px;}
+.opt.selected small{color:var(--brass);opacity:0.8;}
+.size-row{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;}
+.size-field{display:flex;flex-direction:column;gap:6px;}
+.size-field label{font-size:0.72rem;color:#9A9EA6;}
+.size-field input{
+  background:#20242C;border:1px solid #40454F;color:var(--paper);padding:11px 12px;font-size:0.95rem;width:130px;font-family:'Space Grotesk',sans-serif;
+}
+.size-field input:focus{outline:none;border-color:var(--glass);}
+.size-unit{color:#9A9EA6;font-size:0.85rem;padding-bottom:11px;}
+.config-summary{padding:36px;background:#171A20;display:flex;flex-direction:column;}
+.summary-title{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:#8A8F97;margin-bottom:22px;}
+.summary-row{display:flex;justify-content:space-between;font-size:0.86rem;padding:10px 0;border-bottom:1px dashed #333844;color:#C6C9CD;}
+.summary-row span:last-child{color:var(--paper);font-weight:500;}
+.summary-total{
+  margin-top:20px;padding-top:20px;border-top:1px solid #40454F;display:flex;justify-content:space-between;align-items:baseline;
+}
+.summary-total .amt{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--brass);}
+.summary-total .lbl{font-size:0.78rem;color:#9A9EA6;text-transform:uppercase;letter-spacing:0.08em;}
+.config-summary .btn{margin-top:24px;justify-content:center;width:100%;}
+.config-note{font-size:0.72rem;color:#7C818A;margin-top:14px;line-height:1.5;}
+
+/* ---------- Shop ---------- */
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.product-card{border:1px solid var(--line);background:#fff;transition:.2s;}
+.product-card:hover{border-color:var(--ink);}
+.product-thumb{aspect-ratio:4/3;background:var(--paper-dim);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.product-thumb svg{width:60%;height:60%;color:var(--silver);}
+.product-body{padding:16px;}
+.product-body .cat{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--brass);font-weight:700;}
+.product-body h4{font-size:0.95rem;margin:6px 0 8px;}
+.product-body .price{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;}
+.product-body .price small{font-weight:400;font-size:0.72rem;color:var(--ink-soft);}
+.addcart{
+  margin-top:12px;width:100%;padding:9px;border:1px solid var(--ink);background:transparent;font-size:0.78rem;font-weight:600;cursor:pointer;transition:.15s;
+}
+.addcart:hover{background:var(--ink);color:var(--paper);}
+
+/* ---------- Board gallery ---------- */
+.board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.board-card{border:1px solid var(--line);background:#fff;padding:0;}
+.board-swatch{height:130px;position:relative;}
+.board-info{padding:20px;}
+.board-info h4{font-size:1rem;margin-bottom:6px;}
+.board-info p{font-size:0.82rem;color:var(--ink-soft);margin-bottom:10px;}
+.board-info .rate{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--brass);}
+
+/* ---------- About / Contact ---------- */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.info-list{margin-top:24px;display:flex;flex-direction:column;gap:16px;}
+.info-item{display:flex;gap:14px;align-items:flex-start;}
+.info-item svg{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--brass);}
+.info-item .lbl{font-size:0.72rem;text-transform:uppercase;color:var(--silver);letter-spacing:0.06em;}
+.info-item .val{font-size:0.95rem;font-weight:500;}
+.contact-form{border:1px solid var(--line);background:#fff;padding:32px;}
+.form-row{margin-bottom:16px;}
+.form-row label{display:block;font-size:0.78rem;font-weight:600;margin-bottom:6px;}
+.form-row input,.form-row textarea,.form-row select{
+  width:100%;padding:11px 12px;border:1px solid var(--line);background:var(--paper);font-family:inherit;font-size:0.9rem;
+}
+.form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--glass);}
+.map-frame{border:1px solid var(--line);margin-top:24px;filter:grayscale(0.3);}
+
+.faq{margin-top:50px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:0.95rem;}
+.faq-a{max-height:0;overflow:hidden;transition:.25s;font-size:0.88rem;color:var(--ink-soft);}
+.faq-a p{padding-bottom:18px;}
+.faq-item.open .faq-a{max-height:200px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-icon{transition:.2s;font-size:1.2rem;color:var(--brass);}
+
+footer{background:var(--ink);color:#B9BDC4;padding:50px 0 24px;margin-top:0;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.footer-brand .brand-text .name{color:var(--paper);}
+footer h5{color:var(--paper);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:0.85rem;}
+.footer-bottom{border-top:1px solid #2E323B;padding-top:22px;font-size:0.75rem;display:flex;justify-content:space-between;color:#7C818A;}
+
+/* ---------- Cart Drawer ---------- */
+.overlay{position:fixed;inset:0;background:rgba(20,23,28,0.5);z-index:200;opacity:0;pointer-events:none;transition:.25s;}
+.overlay.open{opacity:1;pointer-events:auto;}
+.drawer{
+  position:fixed;top:0;right:-440px;width:420px;max-width:92vw;height:100%;background:#fff;z-index:201;transition:.3s;display:flex;flex-direction:column;
+}
+.drawer.open{right:0;}
+.drawer-head{padding:24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+.drawer-head h3{font-size:1.1rem;}
+.drawer-close{cursor:pointer;font-size:1.4rem;line-height:1;}
+.drawer-body{flex:1;overflow-y:auto;padding:20px 24px;}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);}
+.cart-item .thumb{width:64px;height:64px;background:var(--paper-dim);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.cart-item .thumb svg{width:60%;color:var(--silver);}
+.ci-body{flex:1;}
+.ci-body h5{font-size:0.88rem;margin-bottom:4px;}
+.ci-body .spec{font-size:0.72rem;color:var(--ink-soft);margin-bottom:8px;}
+.ci-controls{display:flex;justify-content:space-between;align-items:center;}
+.qty-ctrl{display:flex;border:1px solid var(--line);}
+.qty-ctrl button{width:24px;height:24px;background:none;border:none;cursor:pointer;font-size:0.9rem;}
+.qty-ctrl span{width:26px;display:flex;align-items:center;justify-content:center;font-size:0.82rem;}
+.ci-price{font-weight:700;font-size:0.9rem;font-family:'Space Grotesk',sans-serif;}
+.ci-remove{font-size:0.72rem;color:#A34444;cursor:pointer;text-decoration:underline;}
+.empty-cart{padding:60px 0;text-align:center;color:var(--ink-soft);font-size:0.9rem;}
+.drawer-foot{padding:22px 24px;border-top:1px solid var(--line);}
+.dt-row{display:flex;justify-content:space-between;margin-bottom:16px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;}
+
+/* Checkout modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(20,23,28,0.6);z-index:300;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;max-width:460px;width:100%;max-height:88vh;overflow-y:auto;padding:32px;position:relative;}
+.modal-close{position:absolute;top:18px;right:20px;font-size:1.4rem;cursor:pointer;}
+.modal h3{font-size:1.3rem;margin-bottom:6px;}
+.modal p.sub{font-size:0.85rem;color:var(--ink-soft);margin-bottom:24px;}
+.pay-opts{display:flex;gap:10px;margin-bottom:18px;}
+.pay-opt{flex:1;border:1px solid var(--line);padding:12px;text-align:center;font-size:0.78rem;font-weight:600;cursor:pointer;}
+.pay-opt.selected{border-color:var(--ink);background:var(--paper);}
+.confirm-box{text-align:center;padding:20px 0;}
+.confirm-box svg{width:56px;height:56px;color:var(--ok);margin:0 auto 16px;}
+
+/* Toast */
+.toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--paper);
+  padding:14px 22px;font-size:0.85rem;font-weight:500;border-radius:2px;z-index:400;opacity:0;pointer-events:none;transition:.25s;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* Responsive */
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;}
+  .hero-art{order:-1;}
+  .cat-grid,.board-grid{grid-template-columns:1fr 1fr;}
+  .shop-grid{grid-template-columns:1fr 1fr;}
+  .config-panel{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;gap:36px;}
+  .footer-grid{grid-template-columns:1fr;gap:24px;}
+  nav ul{display:none;}
+}
+@media(max-width:600px){
+  .hero h1{font-size:2.1rem;}
+  .cat-grid,.board-grid,.shop-grid{grid-template-columns:1fr;}
+  section{padding:56px 0;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="40" height="40" stroke="#14171C" stroke-width="2"/>
+        <line x1="24" y1="4" x2="24" y2="44" stroke="#14171C" stroke-width="2"/>
+        <line x1="4" y1="24" x2="44" y2="24" stroke="#14171C" stroke-width="2"/>
+        <path d="M10 38L18 24L26 32L38 14" stroke="#B08654" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text">
+        <div class="name">Neloy Enterprise</div>
+        <div class="sub" data-en>Glass · Aluminium · Interiors</div>
+        <div class="sub" data-bn>গ্লাস · অ্যালুমিনিয়াম · ইন্টেরিয়র</div>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#home" data-en>Home</a><a href="#home" data-bn>হোম</a></li>
+        <li><a href="#shop" data-en>Shop</a><a href="#shop" data-bn>শপ</a></li>
+        <li><a href="#configurator" data-en>Configure &amp; Price</a><a href="#configurator" data-bn>কনফিগার ও দাম</a></li>
+        <li><a href="#boards" data-en>Decoration Boards</a><a href="#boards" data-bn>ডেকোরেশন বোর্ড</a></li>
+        <li><a href="#about" data-en>About &amp; Contact</a><a href="#about" data-bn>যোগাযোগ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle" id="langToggle">
+        <span data-l="en" class="active">EN</span><span data-l="bn">বাং</span>
+      </div>
+      <div class="cart-btn" id="cartOpenBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span data-en>Cart</span><span data-bn>কার্ট</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span data-en>Netrakona Sadar · Since Local Trust</span><span data-bn>নেত্রকোনা সদর</span></span>
+      <h1 data-en>Modernizing Spaces with <em>Quality Glass</em> &amp; Custom Interiors.</h1>
+      <h1 data-bn>মানসম্পন্ন গ্লাস ও কাস্টম ইন্টেরিয়র দিয়ে <em>আপনার স্পেস</em> আধুনিক করুন।</h1>
+      <p class="lead" data-en>Aluminium &amp; glass doors, windows, and home decoration boards — built to your exact measurements, priced instantly, delivered from our Netrakona workshop.</p>
+      <p class="lead" data-bn>অ্যালুমিনিয়াম ও গ্লাস দরজা, জানালা এবং হোম ডেকোরেশন বোর্ড — আপনার সঠিক মাপ অনুযায়ী তৈরি, তাৎক্ষণিক দাম, নেত্রকোনা ওয়ার্কশপ থেকে ডেলিভারি।</p>
+      <div class="btn-row">
+        <a href="#configurator" class="btn btn-primary"><span data-en>Configure &amp; Get Live Price</span><span data-bn>কনফিগার করে দাম দেখুন</span></a>
+        <a href="#shop" class="btn btn-outline"><span data-en>Browse Shop</span><span data-bn>শপ দেখুন</span></a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 420 420" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="300" height="340" fill="#fff" stroke="#14171C" stroke-width="2"/>
+        <line x1="210" y1="40" x2="210" y2="380" stroke="#14171C" stroke-width="2"/>
+        <line x1="60" y1="210" x2="360" y2="210" stroke="#14171C" stroke-width="2"/>
+        <rect x="70" y="50" width="130" height="150" fill="#DCE7ED"/>
+        <rect x="220" y="50" width="130" height="150" fill="#DCE7ED"/>
+        <rect x="70" y="220" width="130" height="150" fill="#DCE7ED"/>
+        <rect x="220" y="220" width="130" height="150" fill="#DCE7ED"/>
+        <!-- dimension lines -->
+        <line x1="60" y1="400" x2="360" y2="400" stroke="#B08654" stroke-width="1"/>
+        <line x1="60" y1="394" x2="60" y2="406" stroke="#B08654" stroke-width="1"/>
+        <line x1="360" y1="394" x2="360" y2="406" stroke="#B08654" stroke-width="1"/>
+        <text x="210" y="416" text-anchor="middle" class="dim-label">5.0 FT</text>
+        <line x1="395" y1="40" x2="395" y2="380" stroke="#B08654" stroke-width="1"/>
+        <line x1="389" y1="40" x2="401" y2="40" stroke="#B08654" stroke-width="1"/>
+        <line x1="389" y1="380" x2="401" y2="380" stroke="#B08654" stroke-width="1"/>
+        <text x="405" y="215" class="dim-label" transform="rotate(90 405,215)" text-anchor="middle">6.0 FT</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section id="categories">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span data-en>What We Build</span><span data-bn>আমরা যা তৈরি করি</span></span>
+      <h2><span data-en>Three Product Lines, One Workshop</span><span data-bn>তিনটি প্রোডাক্ট লাইন, একটি ওয়ার্কশপ</span></h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="12" y1="2" x2="12" y2="22"/><circle cx="10" cy="12" r="0.6" fill="currentColor"/></svg>
+        <h3 data-en>Aluminium Doors</h3><h3 data-bn>অ্যালুমিনিয়াম দরজা</h3>
+        <p data-en>Sliding &amp; hinged doors, standard and heavy-duty frames, custom colors.</p>
+        <p data-bn>স্লাইডিং ও হিঞ্জড দরজা, স্ট্যান্ডার্ড ও হেভি-ডিউটি ফ্রেম, কাস্টম কালার।</p>
+        <a href="#configurator" class="go" data-en>Get a price →</a><a href="#configurator" class="go" data-bn>দাম জানুন →</a>
+      </div>
+      <div class="cat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+        <h3 data-en>Glass Windows</h3><h3 data-bn>গ্লাস জানালা</h3>
+        <p data-en>Clear, frosted &amp; tinted glass with aluminium framing, any size.</p>
+        <p data-bn>ক্লিয়ার, ফ্রস্টেড ও টিন্টেড গ্লাস, অ্যালুমিনিয়াম ফ্রেমিং সহ, যেকোনো সাইজ।</p>
+        <a href="#configurator" class="go" data-en>Get a price →</a><a href="#configurator" class="go" data-bn>দাম জানুন →</a>
+      </div>
+      <div class="cat-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 15l5-5 4 4 5-6 4 5"/></svg>
+        <h3 data-en>Decoration Boards</h3><h3 data-bn>ডেকোরেশন বোর্ড</h3>
+        <p data-en>PVC &amp; Melamine boards for interiors — our best-selling line.</p>
+        <p data-bn>PVC ও মেলামাইন বোর্ড — আমাদের সবচেয়ে জনপ্রিয় প্রোডাক্ট।</p>
+        <a href="#boards" class="go" data-en>See boards →</a><a href="#boards" class="go" data-bn>বোর্ড দেখুন →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONFIGURATOR ================= -->
+<section id="configurator" class="configurator">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span data-en>Build Your Own</span><span data-bn>নিজের মতো তৈরি করুন</span></span>
+      <h2><span data-en>Enter Size &amp; Material — See Live Price</span><span data-bn>সাইজ ও ম্যাটেরিয়াল দিন — সাথে সাথে দাম দেখুন</span></h2>
+      <p data-en>Prices below are estimate rates and can be adjusted by the shop owner at any time in the code.</p>
+      <p data-bn>নিচের দামগুলো আনুমানিক রেট, মালিক যেকোনো সময় পরিবর্তন করতে পারবেন।</p>
+    </div>
+
+    <div class="config-panel">
+      <div class="config-steps">
+
+        <div class="step">
+          <div class="step-num"><span class="n">1</span><label data-en>Product Type</label><label data-bn>প্রোডাক্ট টাইপ</label></div>
+          <div class="opt-grid" id="productType">
+            <div class="opt" data-val="alu_door"><span data-en>Aluminium Door</span><span data-bn>অ্যালুমিনিয়াম দরজা</span></div>
+            <div class="opt" data-val="alu_window"><span data-en>Aluminium Window</span><span data-bn>অ্যালুমিনিয়াম জানালা</span></div>
+            <div class="opt" data-val="glass_door"><span data-en>Glass Door</span><span data-bn>গ্লাস দরজা</span></div>
+            <div class="opt" data-val="glass_window"><span data-en>Glass Window</span><span data-bn>গ্লাস জানালা</span></div>
+            <div class="opt" data-val="board"><span data-en>Decoration Board</span><span data-bn>ডেকোরেশন বোর্ড</span></div>
+          </div>
+        </div>
+
+        <div class="step" id="materialStep">
+          <div class="step-num"><span class="n">2</span><label data-en>Material / Finish</label><label data-bn>ম্যাটেরিয়াল / ফিনিশ</label></div>
+          <div class="opt-grid" id="materialOpts"></div>
+        </div>
+
+        <div class="step" id="sizeStep">
+          <div class="step-num"><span class="n">3</span><label data-en>Size</label><label data-bn>সাইজ</label></div>
+          <div class="size-row" id="sizeInputs"></div>
+        </div>
+      </div>
+
+      <div class="config-summary">
+        <div class="summary-title"><span data-en>Live Estimate</span><span data-bn>লাইভ হিসাব</span></div>
+        <div class="summary-row"><span data-en>Product</span><span data-bn>প্রোডাক্ট</span><span id="sumProduct">—</span></div>
+        <div class="summary-row"><span data-en>Material</span><span data-bn>ম্যাটেরিয়াল</span><span id="sumMaterial">—</span></div>
+        <div class="summary-row"><span data-en>Size</span><span data-bn>সাইজ</span><span id="sumSize">—</span></div>
+        <div class="summary-row"><span data-en>Rate</span><span data-bn>রেট</span><span id="sumRate">—</span></div>
+        <div class="summary-total">
+          <span class="lbl" data-en>Total</span><span class="lbl" data-bn>মোট</span>
+          <span class="amt" id="sumTotal">৳0</span>
+        </div>
+        <button class="btn btn-primary" id="addConfigToCart"><span data-en>Add to Cart</span><span data-bn>কার্টে যোগ করুন</span></button>
+        <p class="config-note" data-en>Final price may vary slightly after site measurement. Delivery &amp; installation charged separately by area.</p>
+        <p class="config-note" data-bn>সরেজমিন মাপের পর দামে সামান্য পরিবর্তন হতে পারে। ডেলিভারি ও ইনস্টলেশন চার্জ এলাকাভেদে আলাদা।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SHOP ================= -->
+<section id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span data-en>Ready-Made Sizes</span><span data-bn>রেডি-মেইড সাইজ</span></span>
+      <h2><span data-en>Popular Products</span><span data-bn>জনপ্রিয় প্রোডাক্ট</span></h2>
+      <p data-en>Standard sizes ready to order. Need a custom size instead? Use the configurator above.</p>
+      <p data-bn>স্ট্যান্ডার্ড সাইজ অর্ডারের জন্য প্রস্তুত। কাস্টম সাইজ দরকার হলে উপরের কনফিগারেটর ব্যবহার করুন।</p>
+    </div>
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
+</section>
+
+<!-- ================= BOARDS ================= -->
+<section id="boards">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span data-en>Home Decoration</span><span data-bn>হোম ডেকোরেশন</span></span>
+      <h2><span data-en>Decoration Board Types &amp; Rates</span><span data-bn>ডেকোরেশন বোর্ডের ধরন ও রেট</span></h2>
+    </div>
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="board-swatch" style="background:linear-gradient(135deg,#EDE7DA,#D8CFB8);"></div>
+        <div class="board-info">
+          <h4 data-en>PVC Board — 3mm</h4><h4 data-bn>পিভিসি বোর্ড — ৩ মিমি</h4>
+          <p data-en>Light-duty, moisture resistant, great for wall paneling.</p>
+          <p data-bn>হালকা, আর্দ্রতা প্রতিরোধী, ওয়াল প্যানেলিং এর জন্য চমৎকার।</p>
+          <div class="rate">৳30<span data-en>/ft</span><span data-bn>/ফুট</span></div>
+        </div>
+      </div>
+      <div class="board-card">
+        <div class="board-swatch" style="background:linear-gradient(135deg,#DDD3BE,#C2B291);"></div>
+        <div class="board-info">
+          <h4 data-en>PVC Board — 6mm</h4><h4 data-bn>পিভিসি বোর্ড — ৬ মিমি</h4>
+          <p data-en>Thicker, more rigid — for doors, partitions &amp; heavy use.</p>
+          <p data-bn>মোটা ও মজবুত — দরজা, পার্টিশন ও ভারী ব্যবহারের জন্য।</p>
+          <div class="rate">৳45<span data-en>/ft</span><span data-bn>/ফুট</span></div>
+        </div>
+      </div>
+      <div class="board-card">
+        <div class="board-swatch" style="background:linear-gradient(135deg,#C79A62,#9C6E3B);"></div>
+        <div class="board-info">
+          <h4 data-en>Melamine Board <span style="color:#B08654;">★ <span data-en>Best Seller</span><span data-bn>জনপ্রিয়</span></span></h4>
+          <h4 data-bn>মেলামাইন বোর্ড</h4>
+          <p data-en>Wood-finish laminate, our most-loved interior product.</p>
+          <p data-bn>কাঠের ফিনিশ ল্যামিনেট, আমাদের সবচেয়ে পছন্দের প্রোডাক্ট।</p>
+          <div class="rate">৳60<span data-en>/ft</span><span data-bn>/ফুট</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT / CONTACT ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow"><span data-en>About Neloy Enterprise</span><span data-bn>নেলয় এন্টারপ্রাইজ সম্পর্কে</span></span>
+      <h2 style="margin:14px 0;"><span data-en>Built in Netrakona, Trusted at Home</span><span data-bn>নেত্রকোনায় তৈরি, বাড়িতে বিশ্বস্ত</span></h2>
+      <p style="color:var(--ink-soft);" data-en>Neloy Enterprise designs and installs aluminium &amp; glass doors, windows, and home decoration boards, built to each customer's exact measurements from our Netrakona workshop.</p>
+      <p style="color:var(--ink-soft);" data-bn>নেলয় এন্টারপ্রাইজ প্রতিটি গ্রাহকের সঠিক মাপ অনুযায়ী অ্যালুমিনিয়াম ও গ্লাস দরজা, জানালা এবং হোম ডেকোরেশন বোর্ড ডিজাইন ও ইনস্টল করে, আমাদের নেত্রকোনা ওয়ার্কশপ থেকে।</p>
+
+      <div class="info-list">
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="lbl" data-en>Address</div><div class="lbl" data-bn>ঠিকানা</div><div class="val">Bishioura Bazar, Netrakona Sadar, Netrakona</div></div>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div><div class="lbl" data-en>Phone / WhatsApp</div><div class="lbl" data-bn>ফোন / হোয়াটসঅ্যাপ</div><div class="val">01722-884496</div></div>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <div><div class="lbl" data-en>Email</div><div class="lbl" data-bn>ইমেইল</div><div class="val">neloy3211@gmail.com</div></div>
+        </div>
+      </div>
+
+      <iframe class="map-frame" width="100%" height="230" loading="lazy" src="https://www.google.com/maps?q=Netrakona%20Sadar%2C%20Bishioura%20Bazar&output=embed"></iframe>
+
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q"><span><span data-en>How long does installation take?</span><span data-bn>ইনস্টলেশনে কতদিন লাগে?</span></span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><p data-en>Most orders are measured, built and installed within 5–10 working days depending on size and quantity.</p><p data-bn>সাইজ ও পরিমাণ অনুযায়ী বেশিরভাগ অর্ডার ৫–১০ কর্মদিবসের মধ্যে মাপ, তৈরি ও ইনস্টল করা হয়।</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span><span data-en>Do you deliver outside Netrakona?</span><span data-bn>নেত্রকোনার বাইরে ডেলিভারি দেন?</span></span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><p data-en>Yes, we deliver across the district and nearby areas. Delivery charge depends on distance.</p><p data-bn>হ্যাঁ, আমরা জেলা ও আশেপাশের এলাকায় ডেলিভারি দিই। দূরত্ব অনুযায়ী চার্জ প্রযোজ্য।</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span><span data-en>Is there a warranty?</span><span data-bn>ওয়ারেন্টি আছে কি?</span></span><span class="faq-icon">+</span></div>
+          <div class="faq-a"><p data-en>Yes, workmanship warranty applies — ask our team for details specific to your order.</p><p data-bn>হ্যাঁ, কারিগরি ওয়ারেন্টি প্রযোজ্য — আপনার অর্ডার অনুযায়ী বিস্তারিত জানতে যোগাযোগ করুন।</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3 style="margin-bottom:8px;"><span data-en>Request a Quote</span><span data-bn>কোটেশন চান</span></h3>
+      <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:20px;" data-en>Tell us what you need — we'll reply on WhatsApp or phone.</p>
+      <p style="font-size:0.85rem;color:var(--ink-soft);margin-bottom:20px;" data-bn>আপনার প্রয়োজন জানান — আমরা হোয়াটসঅ্যাপ বা ফোনে জানাবো।</p>
+      <form id="quoteForm">
+        <div class="form-row"><label data-en>Name</label><label data-bn>নাম</label><input type="text" required></div>
+        <div class="form-row"><label data-en>Phone</label><label data-bn>ফোন</label><input type="tel" required></div>
+        <div class="form-row"><label data-en>What do you need?</label><label data-bn>কী প্রয়োজন?</label>
+          <textarea rows="4" placeholder="e.g. 2 aluminium windows, 5x4 ft each"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><span data-en>Send via WhatsApp</span><span data-bn>হোয়াটসঅ্যাপে পাঠান</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="brand" style="margin-bottom:14px;">
+        <svg viewBox="0 0 48 48" fill="none" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="40" height="40" stroke="#F2EFE9" stroke-width="2"/>
+          <line x1="24" y1="4" x2="24" y2="44" stroke="#F2EFE9" stroke-width="2"/>
+          <line x1="4" y1="24" x2="44" y2="24" stroke="#F2EFE9" stroke-width="2"/>
+          <path d="M10 38L18 24L26 32L38 14" stroke="#B08654" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text"><div class="name">Neloy Enterprise</div></div>
+      </div>
+      <p style="font-size:0.85rem;max-width:280px;" data-en>Aluminium &amp; glass doors, windows, and home decoration boards — Netrakona.</p>
+      <p style="font-size:0.85rem;max-width:280px;" data-bn>অ্যালুমিনিয়াম ও গ্লাস দরজা, জানালা এবং হোম ডেকোরেশন বোর্ড — নেত্রকোনা।</p>
+    </div>
+    <div>
+      <h5><span data-en>Shop</span><span data-bn>শপ</span></h5>
+      <ul>
+        <li><a href="#configurator" data-en>Configure &amp; Price</a><a href="#configurator" data-bn>কনফিগার ও দাম</a></li>
+        <li><a href="#shop" data-en>Products</a><a href="#shop" data-bn>প্রোডাক্ট</a></li>
+        <li><a href="#boards" data-en>Boards</a><a href="#boards" data-bn>বোর্ড</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5><span data-en>Contact</span><span data-bn>যোগাযোগ</span></h5>
+      <ul>
+        <li>Bishioura Bazar, Netrakona Sadar</li>
+        <li>01722-884496</li>
+        <li>neloy3211@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Neloy Enterprise. <span data-en>All rights reserved.</span><span data-bn>সর্বস্বত্ব সংরক্ষিত।</span></span>
+    <span data-en>Netrakona, Bangladesh</span><span data-bn>নেত্রকোনা, বাংলাদেশ</span>
+  </div>
+</footer>
+
+<!-- ================= CART DRAWER ================= -->
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3><span data-en>Your Cart</span><span data-bn>আপনার কার্ট</span></h3>
+    <span class="drawer-close" id="drawerClose">&times;</span>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot" style="display:none;">
+    <div class="dt-row"><span data-en>Subtotal</span><span data-bn>সাবটোটাল</span><span id="drawerSubtotal">৳0</span></div>
+    <button class="btn btn-primary" id="checkoutBtn" style="width:100%;justify-content:center;"><span data-en>Checkout</span><span data-bn>চেকআউট</span></button>
+  </div>
+</div>
+
+<!-- ================= CHECKOUT MODAL ================= -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal" id="modalContent">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <div id="checkoutForm">
+      <h3><span data-en>Complete Your Order</span><span data-bn>অর্ডার সম্পন্ন করুন</span></h3>
+      <p class="sub"><span data-en>We'll confirm your order over phone / WhatsApp.</span><span data-bn>আমরা ফোন / হোয়াটসঅ্যাপে অর্ডার নিশ্চিত করবো।</span></p>
+      <div class="form-row"><label data-en>Full Name</label><label data-bn>পূর্ণ নাম</label><input type="text" id="coName" required></div>
+      <div class="form-row"><label data-en>Phone Number</label><label data-bn>ফোন নম্বর</label><input type="tel" id="coPhone" required></div>
+      <div class="form-row"><label data-en>Delivery Address</label><label data-bn>ডেলিভারি ঠিকানা</label><textarea id="coAddress" rows="3" required></textarea></div>
+      <div class="form-row">
+        <label data-en>Payment Method</label><label data-bn>পেমেন্ট মেথড</label>
+        <div class="pay-opts" id="payOpts">
+          <div class="pay-opt selected" data-val="cod"><span data-en>Cash on Delivery</span><span data-bn>ক্যাশ অন ডেলিভারি</span></div>
+          <div class="pay-opt" data-val="bkash"><span data-en>bKash</span><span data-bn>বিকাশ</span></div>
+          <div class="pay-opt" data-val="nagad"><span data-en>Nagad</span><span data-bn>নগদ</span></div>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="placeOrderBtn" style="width:100%;justify-content:center;"><span data-en>Place Order via WhatsApp</span><span data-bn>হোয়াটসঅ্যাপে অর্ডার করুন</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== LANGUAGE TOGGLE ===================== */
+const langToggle = document.getElementById('langToggle');
+langToggle.addEventListener('click', (e)=>{
+  const t = e.target.closest('span[data-l]');
+  if(!t) return;
+  const lang = t.dataset.l;
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang;
+  [...langToggle.children].forEach(s=>s.classList.toggle('active', s===t));
+  renderShop(); renderConfigurator();
+});
+
+/* ===================== PRICING CONFIG (edit rates here) ===================== */
+const PRICING = {
+  alu_door:    { label:{en:'Aluminium Door',bn:'অ্যালুমিনিয়াম দরজা'}, unit:'sqft',
+    materials:[
+      {id:'std', label:{en:'Standard Frame',bn:'স্ট্যান্ডার্ড ফ্রেম'}, rate:380},
+      {id:'hd',  label:{en:'Heavy-Duty Frame',bn:'হেভি-ডিউটি ফ্রেম'}, rate:480}
+    ]},
+  alu_window:  { label:{en:'Aluminium Window',bn:'অ্যালুমিনিয়াম জানালা'}, unit:'sqft',
+    materials:[
+      {id:'std', label:{en:'Standard Frame',bn:'স্ট্যান্ডার্ড ফ্রেম'}, rate:340},
+      {id:'hd',  label:{en:'Heavy-Duty Frame',bn:'হেভি-ডিউটি ফ্রেম'}, rate:420}
+    ]},
+  glass_door:  { label:{en:'Glass Door',bn:'গ্লাস দরজা'}, unit:'sqft',
+    materials:[
+      {id:'clear',   label:{en:'Clear Glass',bn:'ক্লিয়ার গ্লাস'}, rate:320},
+      {id:'frosted', label:{en:'Frosted Glass',bn:'ফ্রস্টেড গ্লাস'}, rate:360},
+      {id:'tinted',  label:{en:'Tinted Glass',bn:'টিন্টেড গ্লাস'}, rate:400}
+    ]},
+  glass_window:{ label:{en:'Glass Window',bn:'গ্লাস জানালা'}, unit:'sqft',
+    materials:[
+      {id:'clear',   label:{en:'Clear Glass',bn:'ক্লিয়ার গ্লাস'}, rate:300},
+      {id:'frosted', label:{en:'Frosted Glass',bn:'ফ্রস্টেড গ্লাস'}, rate:340},
+      {id:'tinted',  label:{en:'Tinted Glass',bn:'টিন্টেড গ্লাস'}, rate:380}
+    ]},
+  board:       { label:{en:'Decoration Board',bn:'ডেকোরেশন বোর্ড'}, unit:'ft',
+    materials:[
+      {id:'pvc3', label:{en:'PVC Board 3mm',bn:'পিভিসি বোর্ড ৩মিমি'}, rate:30},
+      {id:'pvc6', label:{en:'PVC Board 6mm',bn:'পিভিসি বোর্ড ৬মিমি'}, rate:45},
+      {id:'mel',  label:{en:'Melamine Board',bn:'মেলামাইন বোর্ড'}, rate:60}
+    ]}
+};
+
+let currentProduct = 'alu_door';
+let currentMaterial = null;
+
+function lang(){ return document.documentElement.getAttribute('data-lang'); }
+function t(obj){ return obj[lang()]; }
+function fmt(n){ return '৳' + Math.round(n).toLocaleString('en-US'); }
+
+/* ===================== CONFIGURATOR ===================== */
+function renderConfigurator(){
+  // product type selection state
+  document.querySelectorAll('#productType .opt').forEach(o=>{
+    o.classList.toggle('selected', o.dataset.val===currentProduct);
+  });
+  const cfg = PRICING[currentProduct];
+  if(!currentMaterial || !cfg.materials.find(m=>m.id===currentMaterial)){
+    currentMaterial = cfg.materials[0].id;
+  }
+  // materials
+  const matWrap = document.getElementById('materialOpts');
+  matWrap.innerHTML = cfg.materials.map(m=>`
+    <div class="opt ${m.id===currentMaterial?'selected':''}" data-val="${m.id}">
+      ${t(m.label)}<small>${fmt(m.rate)}/${cfg.unit==='sqft'? (lang()==='bn'?'বর্গফুট':'sqft') : (lang()==='bn'?'ফুট':'ft')}</small>
+    </div>`).join('');
+
+  // size inputs
+  const sizeWrap = document.getElementById('sizeInputs');
+  if(cfg.unit==='sqft'){
+    sizeWrap.innerHTML = `
+      <div class="size-field"><label data-en>Width</label><label data-bn>প্রস্থ</label><input type="number" id="dimW" min="0.5" step="0.1" value="4"></div>
+      <div class="size-unit">×</div>
+      <div class="size-field"><label data-en>Height</label><label data-bn>উচ্চতা</label><input type="number" id="dimH" min="0.5" step="0.1" value="5"></div>
+      <div class="size-unit">ft</div>`;
+    sizeWrap.querySelectorAll('span[data-en],span[data-bn]').forEach(()=>{});
+  } else {
+    sizeWrap.innerHTML = `
+      <div class="size-field"><label data-en>Length</label><label data-bn>লম্বা</label><input type="number" id="dimL" min="0.5" step="0.1" value="8"></div>
+      <div class="size-unit">ft</div>`;
+  }
+  document.getElementById('dimW') && document.getElementById('dimW').addEventListener('input', updateSummary);
+  document.getElementById('dimH') && document.getElementById('dimH').addEventListener('input', updateSummary);
+  document.getElementById('dimL') && document.getElementById('dimL').addEventListener('input', updateSummary);
+
+  matWrap.querySelectorAll('.opt').forEach(o=>{
+    o.addEventListener('click', ()=>{ currentMaterial = o.dataset.val; renderConfigurator(); updateSummary(); });
+  });
+
+  updateSummary();
+}
+
+function getCurrentConfig(){
+  const cfg = PRICING[currentProduct];
+  const mat = cfg.materials.find(m=>m.id===currentMaterial);
+  let sizeLabel, qtyUnits, sizeVal;
+  if(cfg.unit==='sqft'){
+    const w = parseFloat(document.getElementById('dimW')?.value)||0;
+    const h = parseFloat(document.getElementById('dimH')?.value)||0;
+    sizeVal = w*h;
+    sizeLabel = `${w} × ${h} ft`;
+  } else {
+    const l = parseFloat(document.getElementById('dimL')?.value)||0;
+    sizeVal = l;
+    sizeLabel = `${l} ft`;
+  }
+  const total = sizeVal * mat.rate;
+  return { cfg, mat, sizeVal, sizeLabel, total };
+}
+
+function updateSummary(){
+  const {cfg, mat, sizeLabel, total} = getCurrentConfig();
+  document.getElementById('sumProduct').textContent = t(cfg.label);
+  document.getElementById('sumMaterial').textContent = t(mat.label);
+  document.getElementById('sumSize').textContent = sizeLabel;
+  document.getElementById('sumRate').textContent = fmt(mat.rate) + '/' + (cfg.unit==='sqft'?'sqft':'ft');
+  document.getElementById('sumTotal').textContent = fmt(total);
+}
+
+document.getElementById('productType').addEventListener('click', (e)=>{
+  const o = e.target.closest('.opt'); if(!o) return;
+  currentProduct = o.dataset.val; currentMaterial = null;
+  renderConfigurator();
+});
+
+document.getElementById('addConfigToCart').addEventListener('click', ()=>{
+  const {cfg, mat, sizeLabel, total} = getCurrentConfig();
+  addToCart({
+    id: 'custom-'+Date.now(),
+    name: t(cfg.label) + ' — ' + t(mat.label),
+    spec: sizeLabel,
+    price: total,
+    qty: 1
+  });
+  showToast(lang()==='bn' ? 'কার্টে যোগ করা হয়েছে' : 'Added to cart');
+});
+
+/* ===================== SHOP (sample ready-made products) ===================== */
+const SHOP_PRODUCTS = [
+  {id:'p1', cat:{en:'Aluminium Door',bn:'অ্যালুমিনিয়াম দরজা'}, name:{en:'Sliding Door 6×7 ft',bn:'স্লাইডিং দরজা ৬×৭ ফুট'}, price:380*42},
+  {id:'p2', cat:{en:'Glass Window',bn:'গ্লাস জানালা'}, name:{en:'Clear Window 4×5 ft',bn:'ক্লিয়ার জানালা ৪×৫ ফুট'}, price:300*20},
+  {id:'p3', cat:{en:'Aluminium Window',bn:'অ্যালুমিনিয়াম জানালা'}, name:{en:'Standard Window 3×4 ft',bn:'স্ট্যান্ডার্ড জানালা ৩×৪ ফুট'}, price:340*12},
+  {id:'p4', cat:{en:'Melamine Board',bn:'মেলামাইন বোর্ড'}, name:{en:'Melamine Sheet 8 ft',bn:'মেলামাইন শিট ৮ ফুট'}, price:60*8},
+];
+function renderShop(){
+  const grid = document.getElementById('shopGrid');
+  grid.innerHTML = SHOP_PRODUCTS.map(p=>`
+    <div class="product-card">
+      <div class="product-thumb">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+      </div>
+      <div class="product-body">
+        <div class="cat">${t(p.cat)}</div>
+        <h4>${t(p.name)}</h4>
+        <div class="price">${fmt(p.price)}</div>
+        <button class="addcart" data-id="${p.id}">${lang()==='bn'?'কার্টে যোগ করুন':'Add to Cart'}</button>
+      </div>
+    </div>`).join('');
+  grid.querySelectorAll('.addcart').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const p = SHOP_PRODUCTS.find(x=>x.id===btn.dataset.id);
+      addToCart({id:p.id, name:t(p.name), spec:t(p.cat), price:p.price, qty:1});
+      showToast(lang()==='bn' ? 'কার্টে যোগ করা হয়েছে' : 'Added to cart');
+    });
+  });
+}
+
+/* ===================== CART ===================== */
+let CART = JSON.parse(localStorage.getItem('neloy_cart')||'[]');
+function saveCart(){ localStorage.setItem('neloy_cart', JSON.stringify(CART)); }
+function addToCart(item){
+  const existing = CART.find(c=>c.id===item.id && c.spec===item.spec);
+  if(existing){ existing.qty += 1; } else { CART.push(item); }
+  saveCart(); renderCart();
+}
+function renderCart(){
+  const body = document.getElementById('drawerBody');
+  const foot = document.getElementById('drawerFoot');
+  document.getElementById('cartCount').textContent = CART.reduce((a,c)=>a+c.qty,0);
+  if(CART.length===0){
+    body.innerHTML = `<div class="empty-cart">${lang()==='bn'?'আপনার কার্ট খালি':'Your cart is empty'}</div>`;
+    foot.style.display='none';
+    return;
+  }
+  foot.style.display='block';
+  body.innerHTML = CART.map((c,i)=>`
+    <div class="cart-item">
+      <div class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="3" y1="12" x2="21" y2="12"/></svg></div>
+      <div class="ci-body">
+        <h5>${c.name}</h5>
+        <div class="spec">${c.spec}</div>
+        <div class="ci-controls">
+          <div class="qty-ctrl">
+            <button data-act="dec" data-i="${i}">−</button><span>${c.qty}</span><button data-act="inc" data-i="${i}">+</button>
+          </div>
+          <div class="ci-price">${fmt(c.price*c.qty)}</div>
+        </div>
+        <div class="ci-remove" data-i="${i}">${lang()==='bn'?'সরান':'Remove'}</div>
+      </div>
+    </div>`).join('');
+  const subtotal = CART.reduce((a,c)=>a+c.price*c.qty,0);
+  document.getElementById('drawerSubtotal').textContent = fmt(subtotal);
+
+  body.querySelectorAll('[data-act]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const i = +btn.dataset.i;
+      if(btn.dataset.act==='inc') CART[i].qty++;
+      if(btn.dataset.act==='dec'){ CART[i].qty--; if(CART[i].qty<=0) CART.splice(i,1); }
+      saveCart(); renderCart();
+    });
+  });
+  body.querySelectorAll('.ci-remove').forEach(el=>{
+    el.addEventListener('click', ()=>{ CART.splice(+el.dataset.i,1); saveCart(); renderCart(); });
+  });
+}
+
+const overlay = document.getElementById('overlay');
+const drawer = document.getElementById('cartDrawer');
+function openCart(){ overlay.classList.add('open'); drawer.classList.add('open'); }
+function closeCart(){ overlay.classList.remove('open'); drawer.classList.remove('open'); }
+document.getElementById('cartOpenBtn').addEventListener('click', openCart);
+document.getElementById('drawerClose').addEventListener('click', closeCart);
+overlay.addEventListener('click', closeCart);
+
+/* ===================== CHECKOUT ===================== */
+const checkoutModal = document.getElementById('checkoutModal');
+document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+  if(CART.length===0) return;
+  checkoutModal.classList.add('open');
+});
+document.getElementById('modalClose').addEventListener('click', ()=> checkoutModal.classList.remove('open'));
+checkoutModal.addEventListener('click', (e)=>{ if(e.target===checkoutModal) checkoutModal.classList.remove('open'); });
+
+let selectedPay = 'cod';
+document.getElementById('payOpts').addEventListener('click', (e)=>{
+  const o = e.target.closest('.pay-opt'); if(!o) return;
+  selectedPay = o.dataset.val;
+  document.querySelectorAll('.pay-opt').forEach(x=>x.classList.toggle('selected', x===o));
+});
+
+document.getElementById('placeOrderBtn').addEventListener('click', ()=>{
+  const name = document.getElementById('coName').value.trim();
+  const phone = document.getElementById('coPhone').value.trim();
+  const address = document.getElementById('coAddress').value.trim();
+  if(!name || !phone || !address){
+    showToast(lang()==='bn' ? 'সব ঘর পূরণ করুন' : 'Please fill all fields');
+    return;
+  }
+  const subtotal = CART.reduce((a,c)=>a+c.price*c.qty,0);
+  const lines = CART.map(c=>`• ${c.name} (${c.spec}) x${c.qty} = ${fmt(c.price*c.qty)}`).join('%0A');
+  const payLabel = {cod:'Cash on Delivery', bkash:'bKash', nagad:'Nagad'}[selectedPay];
+  const msg = `*New Order — Neloy Enterprise*%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AAddress: ${encodeURIComponent(address)}%0APayment: ${payLabel}%0A%0AOrder:%0A${lines}%0A%0ATotal: ${fmt(subtotal)}`;
+  window.open(`https://wa.me/8801722884496?text=${msg}`, '_blank');
+  CART = []; saveCart(); renderCart();
+  checkoutModal.classList.remove('open');
+  closeCart();
+  showToast(lang()==='bn' ? 'অর্ডার পাঠানো হয়েছে' : 'Order sent via WhatsApp');
+});
+
+/* ===================== QUOTE FORM ===================== */
+document.getElementById('quoteForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const inputs = e.target.querySelectorAll('input,textarea');
+  const [name, phone, msg] = [...inputs].map(i=>i.value.trim());
+  const text = `*Quote Request — Neloy Enterprise*%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ANeed: ${encodeURIComponent(msg||'-')}`;
+  window.open(`https://wa.me/8801722884496?text=${text}`, '_blank');
+});
+
+/* ===================== FAQ ===================== */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click', ()=>{
+    item.classList.toggle('open');
+  });
+});
+
+/* ===================== TOAST ===================== */
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 2200);
+}
+
+/* ===================== INIT ===================== */
+renderConfigurator();
+renderShop();
+renderCart();
+</script>
+</body>
+</html>
